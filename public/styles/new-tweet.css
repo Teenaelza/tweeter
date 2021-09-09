@@ -1,0 +1,76 @@
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 5px solid #5e6572;
+  background-color: transparent;
+}
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.new-tweet .counter {
+  float: right;
+}
+#tweet-form #error {
+  display: none;
+  height: 75px;
+  text-align: center;
+  width: 100%;
+  border-style: groove;
+  color: crimson;
+  border-color: crimson;
+}
+.new-tweet button {
+  background-color: #4056a1;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.tweet:hover {
+  box-shadow: 5px 10px #4056a1;
+}
+#tweet-icons i:hover {
+  color: rgb(201, 125, 32);
+}
+#tweets-container {
+  width: 100%;
+}
+article {
+  background-color: transparent;
+  padding: 1.5em;
+  margin-top: 20px;
+  border: 5px solid #5e6572;
+}
+article header {
+  display: flex;
+  margin: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: none;
+  height: 100px;
+}
+article div {
+  border-bottom: 5px solid #5e6572;
+}
+article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#tweet-icons {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20%;
+}
+#tweet-icons i {
+  color: #4056a1;
+}
