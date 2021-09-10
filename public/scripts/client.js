@@ -1,10 +1,10 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * This will fetch all the tweets in the Json Object.
+ * dynamically add the new tweet without refreshng.
+ * does client side validation on submit
  */
 $(() => {
-  //function to create  all the tweets in the Json
+  //function to  load the tweets in the Json
   const renderTweets = function (tweets) {
     const $tweetContainer = $("#tweets-container");
     $tweetContainer.empty();
@@ -34,6 +34,21 @@ $(() => {
     $tweet.append($header, $div, $footer);
     return $tweet;
   };
+  //Validate for an empty text area  and long tweet:max length is 140
+  const validate = function ($textarea, $counter) {
+    if (!$textarea.val().trim()) {
+      $("#error").slideDown(1000);
+      return false;
+    }
+    if (parseInt($counter) < 0) {
+      $("#error").text(
+        "You have reached your maximum limit of characters allowed❗"
+      );
+      $("#error").slideDown(1000);
+      return false;
+    }
+    return true;
+  };
   //Function for an ajax get request to get the tweets.
   const loadTweets = () => {
     $.ajax({
@@ -50,30 +65,25 @@ $(() => {
       },
     });
   };
+  //Function Call
   loadTweets();
+  //Tweet Form submit Event Handling.
   const $tweetForm = $("#tweet-form");
   $tweetForm.on("submit", function (event) {
     const $textarea = $(this).find("textarea");
-    const $counter = $(this).find(".counter").val();
+    const $counter = $(this).find(".counter");
+    const $counterVal = $(this).find(".counter").val();
+
     $("#error").slideUp(1000);
-    console.log($counter);
     event.preventDefault();
+    if (!validate($textarea, $counter)) {
+      return;
+    }
     const serializedData = $(this).serialize();
-    if (!$textarea.val().trim()) {
-      $("#error").slideDown(1000);
-      return false;
-    }
-    if (parseInt($counter) < 0) {
-      $("#error").text(
-        "You have reached your maximum limit of characters allowed"
-      );
-      $("#error").slideDown(1000);
-      return false;
-    }
-    console.log(serializedData);
     $.post("/tweets", serializedData, (response) => {
-      console.log(response);
       loadTweets();
+      $textarea.val("");
+      $counter.val(140);
     });
   });
 });
