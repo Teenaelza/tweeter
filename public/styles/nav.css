@@ -12,7 +12,8 @@ nav {
   align-items: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  background-color: #4056a1;
+  background-color: rgb(201, 125, 32);
+  background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png");
   color: #ffffff;
 }
 nav div {
