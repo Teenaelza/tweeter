@@ -6,7 +6,7 @@
 }
 article {
   background-color: transparent;
-  padding: 1.5em;
+  padding: 0.5em;
   margin-top: 20px;
   border: 5px solid #5e6572;
 }
@@ -17,7 +17,7 @@ article header {
   justify-content: space-between;
   align-items: flex-start;
   background: none;
-  height: 100px;
+  height: 75px;
   color: #6881d6;
 }
 article div {
