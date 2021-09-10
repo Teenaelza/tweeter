@@ -33,6 +33,26 @@ main {
   margin: auto;
   background-color: transparent;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media only screen and (min-width: 1024px) {
+  body {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  body > nav {
+    background-color: #4056a1;
+  }
+  body > main {
+    width: 60%;
+    padding: 1.5em;
+  }
+  body > header {
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    border-radius: 10px;
+    width: 40%;
+    justify-content: center;
+  }
+}

@@ -12,9 +12,11 @@ textarea {
 
 .new-tweet .counter {
   float: right;
+  font-weight: 600;
 }
 #tweet-form #error {
   display: none;
+  padding: 1em;
   height: 75px;
   text-align: center;
   width: 100%;
@@ -25,7 +27,8 @@ textarea {
 .new-tweet button {
   background-color: #4056a1;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
+  font-weight: 600;
   color: white;
   padding: 15px 32px;
   text-align: center;
