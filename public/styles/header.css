@@ -15,3 +15,6 @@ header {
 header h2 {
   color: #ffffff;
 }
+header h2 span {
+  font-weight: 300;
+}

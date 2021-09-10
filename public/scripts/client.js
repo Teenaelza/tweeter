@@ -71,9 +71,7 @@ $(() => {
   const $tweetForm = $("#tweet-form");
   $tweetForm.on("submit", function (event) {
     const $textarea = $(this).find("textarea");
-    const $counter = $(this).find(".counter");
-    const $counterVal = $(this).find(".counter").val();
-
+    const $counter = $(this).find(".counter").val();
     $("#error").slideUp(1000);
     event.preventDefault();
     if (!validate($textarea, $counter)) {
@@ -82,8 +80,8 @@ $(() => {
     const serializedData = $(this).serialize();
     $.post("/tweets", serializedData, (response) => {
       loadTweets();
-      $textarea.val("");
-      $counter.val(140);
     });
+    $textarea.val("");
+    $(this).find(".counter").val(140);
   });
 });
